@@ -1,5 +1,16 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div class="container">
+
+
+<div class="row justify-content-center">
+  <h1>PLAYGROUND PROTOTYPE</h1>
+  <div class="col-12 text-center">
+    <Playground @variations={{variations}} as | selected |>
+      <MayaButton @disabled={{selected.disabled}} @type={{selected.type}} @size={{selected.size}}>
+        Test
+      </MayaButton>
+    </Playground>
+  </div>
+</div>
+</div>
 
 {{outlet}}

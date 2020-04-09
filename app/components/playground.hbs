@@ -1,0 +1,36 @@
+<div class="my-5">
+  <h3>Playground</h3>
+  {{#each variations as | variationGroup groupIndex |}}
+    <div class="mb-3">
+      <h6>{{variationGroup.name}}</h6>
+      <BsButtonGroup
+        @type="radio"
+        @value={{variationGroup.selected}} as |bg|>
+        <bg.button
+          @value={{null}}
+          @onClick={{action (fn selectVariation groupIndex null)}}
+        >
+          default
+        </bg.button>
+        {{#each variationGroup.variations as | variation |}}
+          <bg.button
+            @value={{variation}}
+            @onClick={{action (fn selectVariation groupIndex variation)}}
+          >
+            {{variation}}
+          </bg.button>
+        {{/each}}
+      </BsButtonGroup>
+    </div>
+  {{/each}}
+  <br>
+  <h4>selected</h4>
+  {{#each selectedArray as | variationGroup |}}
+    {{#if variationGroup.selected}}
+      <div>
+        {{variationGroup.name}}: {{variationGroup.selected}}
+      </div>
+    {{/if}}
+  {{/each}}
+</div>
+{{yield selectedObject}}

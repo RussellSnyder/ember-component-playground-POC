@@ -1,0 +1,18 @@
+<div class="container mb-4 ">
+<h3>Code Viewer</h3>
+<div class="row mb-3">
+  <div class="col-12">
+    <MayaButton {{on 'click' copyCode}}>Copy Cody</MayaButton>
+    <MayaButton {{on 'click' openCodeViewer}}>{{unless isCodeViewerOpen 'View Code' 'Hide Code'}}</MayaButton>
+  </div>
+</div>
+{{#if isCodeViewerOpen}}
+<hr>
+<pre class="text-left">
+{{codeString}}
+{{!-- {{codeStringStart}}
+  {{@yield}}
+{{codeStringEnd}} --}}
+</pre>
+{{/if}}
+</div>

@@ -28,9 +28,11 @@
   {{#each selectedArray as | variationGroup |}}
     {{#if variationGroup.selected}}
       <div>
-        {{variationGroup.name}}: {{variationGroup.selected}}
+        @{{variationGroup.name}}="{{variationGroup.selected}}"
       </div>
     {{/if}}
+  {{else}}
+    Default props
   {{/each}}
 </div>
 {{yield selectedObject}}

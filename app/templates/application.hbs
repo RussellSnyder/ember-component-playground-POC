@@ -5,7 +5,12 @@
   <h1>PLAYGROUND PROTOTYPE</h1>
   <div class="col-12 text-center">
     <Playground @variations={{variations}} as | selected |>
-      <MayaButton @disabled={{selected.disabled}} @type={{selected.type}} @size={{selected.size}}>
+      <MayaButton
+        @disabled={{selected.disabled}}
+        @type={{selected.type}}
+        @size={{selected.size}}
+        @active={{selected.active}}
+      >
         Test
       </MayaButton>
     </Playground>
